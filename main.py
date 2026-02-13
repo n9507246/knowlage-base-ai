@@ -16,8 +16,11 @@ def main():
                 break
             
             if query:
+
+                result = agent.run(query, clarify=True)
+
                 Console.print_answer(
-                    agent.ask(query, clarify=True)
+                    result.get("output")
                 )
                 
         except KeyboardInterrupt:

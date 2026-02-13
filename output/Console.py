@@ -1,6 +1,6 @@
 from rich.console import Console as RichConsole
 from rich.panel import Panel
-
+from agents.my_agent.MyAgent import AgentState
 class Console:
     
     outputCli = RichConsole()
@@ -14,7 +14,8 @@ class Console:
         ))
     
     @staticmethod
-    def print_answer(answer, clarify=True):
+    def print_answer( answer, clarify=True):
+
         Console.outputCli.print(f"AI: {answer}")
 
     @staticmethod
