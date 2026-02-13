@@ -7,7 +7,9 @@ class LLM:
         self.system_prompt = system_prompt
 
     def __call__(self, state: dict) -> dict:
-        
+
+        user_query = state.get("input")
+
         return {
-            "output": "!ваш ответ на вопрос...",
+            "output": self.model.ask( user_query ),
         }
