@@ -1,13 +1,13 @@
 from rich.console import Console as RichConsole
 from rich.panel import Panel
-from agents.my_agent.MyAgent import AgentState
-class Console:
+
+class Output:
     
     outputCli = RichConsole()
 
     @staticmethod
     def welcome_message():
-        Console.outputCli.print(Panel.fit(
+        Output.outputCli.print(Panel.fit(
             "🛠️ [bold cyan]Ассистент системного администратора[/bold cyan]\n"
             "Задавайте вопросы о настройке, устранении неисправностей и автоматизации.",
             style="blue"
@@ -16,12 +16,12 @@ class Console:
     @staticmethod
     def print_answer( answer, clarify=True):
 
-        Console.outputCli.print(f"AI: {answer}")
+        Output.outputCli.print(f"AI: {answer}")
 
     @staticmethod
     def out_message():
-        Console.outputCli.print("\n[yellow]Завершение работы...[/yellow]")
+        Output.outputCli.print("\n[yellow]Завершение работы...[/yellow]")
 
     @staticmethod
     def err_message(e: Exception):
-        Console.outputCli.print(f"[red]Ошибка: {e}[/red]")
+        Output.outputCli.print(f"[red]Ошибка: {e}[/red]")
